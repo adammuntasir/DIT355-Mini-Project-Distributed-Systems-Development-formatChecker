@@ -1,14 +1,10 @@
-var coordinates = require('./coordinates.js');
 const bookingModel = {
 
-              
-                    clientId: null,
-                    requestId: null,
-                    bookingTime: "HH:MM YYYY-MM-DD",
-                    issuance: null,
-                    dentistID: null,
-                    clientTime:  "YYYY/MM/DD/''/HH/MM",
-                    clientCoordinates: coordinates
-        }
-    
-    module.exports = bookingModel;
+    userId: null,
+    requestId: null,
+    dentistID: null,
+    issuance: null,
+    date: "YYYY-MM-DD HH:MM"
+}
+
+module.exports = bookingModel;
