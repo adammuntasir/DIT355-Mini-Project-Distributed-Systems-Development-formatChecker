@@ -15,7 +15,7 @@ subscriber.eventListener.on("mqttRecieved", function(topic, payload) {
 
     if (payload.length > 40) {
         var messageExtracted = logic.extractData(payload)
-
+        console.log(payload)
         var dataResult = bookingFunction.callFunction(messageExtracted)
         if (dataResult === true) {
             var bytesString = String.fromCharCode(...payload) // https://programmingwithswift.com/how-to-convert-byte-array-to-string-with-javascript/ EQUAL TO STRING
