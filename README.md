@@ -21,6 +21,5 @@ The main purpose of the format Checker  repository is to check if the data that 
    To run this node we use "node index" command
 
 ### Link to the main Team-8 documentation ReadMe file  
-
-https://git.chalmers.se/courses/dit355/test-teams-formation/team-8/formatChecker/-/edit/main/README.md
+https://git.chalmers.se/courses/dit355/test-teams-formation/team-8/team-8-project/-/blob/main/README.md
 
