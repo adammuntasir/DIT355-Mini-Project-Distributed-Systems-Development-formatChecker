@@ -1,7 +1,7 @@
 # formatChecker
 
 ### Purpose
-The main purpose of the format Checker  repository is to check if the data that inpit by client is within the correct format. 
+The main purpose of the format Checker  repository is to check if the data that input by client is within the correct format and the check the object key if it all exist. 
 
 
 ### Technologies used
