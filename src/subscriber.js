@@ -48,7 +48,7 @@ var subscriber = {
 };
 
 function startSubscription() {
-    client.subscribe(access.FromClient); // receive the chosen date
+    client.subscribe(access.sendToFormatChecker); // receive the chosen date
 }
 
 module.exports = subscriber;
