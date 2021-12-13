@@ -12,7 +12,7 @@ publisher.start(); //starts the publisher.js module
 
 
 subscriber.eventListener.on("mqttRecieved", function(topic, payload) {
-
+    console.log(payload.length)
     if (payload.length > 40) {
         var messageExtracted = logic.extractData(payload)
             //console.log(payload)
@@ -25,11 +25,11 @@ subscriber.eventListener.on("mqttRecieved", function(topic, payload) {
             var splitUpString = readyToBeModified.split(/(?::|-| )+/);
             console.log(splitUpString)
 
-            publisher.publish(access.sendToDataHandler, payload)
+            publisher.publish(payload)
         }
 
     } else {
-
-        publisher.publish(access.sendToDataHandler, payload)
+        console.log(payload)
+        publisher.publish(payload)
     }
 })
