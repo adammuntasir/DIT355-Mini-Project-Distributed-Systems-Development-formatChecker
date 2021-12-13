@@ -3,9 +3,7 @@ var publisher = require('./src/publisher.js');
 var logic = require('./src/logic.js');
 var bookingFunction = require('./src/bookingFunction.js');
 
-
-var access = require('../global_values.js');
-const booleanValidator = require('./src/booleanValidator.js');
+const dateFunction = require('./src/dateFunction.js');
 
 subscriber.start(); //starts the subscriber.js module
 publisher.start(); //starts the publisher.js module
@@ -13,7 +11,7 @@ publisher.start(); //starts the publisher.js module
 
 subscriber.eventListener.on("mqttRecieved", function(topic, payload) {
     console.log(payload.length)
-    if (payload.length > 40) {
+    if (payload.length > 40) { // booking format checker 
         var messageExtracted = logic.extractData(payload)
             //console.log(payload)
         var dataResult = bookingFunction.callFunction(messageExtracted)
@@ -28,8 +26,15 @@ subscriber.eventListener.on("mqttRecieved", function(topic, payload) {
             publisher.publish(payload)
         }
 
-    } else {
-        console.log(payload)
-        publisher.publish(payload)
+    } else { // date format checker 
+
+        var messageExtracted = logic.extractData(payload)
+        console.log(messageExtracted)
+
+        var dataResult = dateFunction.callFunction(messageExtracted)
+        if (dataResult) {
+            publisher.publish(payload)
+        }
+
     }
 })

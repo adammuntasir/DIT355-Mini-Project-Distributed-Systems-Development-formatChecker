@@ -5,6 +5,7 @@ var bookingFunction = {
     callFunction(argument) {
         var parseObject = JSON.parse(argument)
         var arrayOjbect = Object.keys(parseObject)
+        console.log(argument)
         var hasAll = arrayOjbect.every(arrayOjbect => bookingModel.hasOwnProperty(arrayOjbect));
         if (hasAll) {
             hasAll = false
