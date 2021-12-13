@@ -8,7 +8,7 @@ const dateFunction = require('./src/dateFunction.js');
 subscriber.start(); //starts the subscriber.js module
 publisher.start(); //starts the publisher.js module
 
-
+// get messages
 subscriber.eventListener.on("mqttRecieved", function(topic, payload) {
     console.log(payload.length)
     if (payload.length > 40) { // booking format checker 
