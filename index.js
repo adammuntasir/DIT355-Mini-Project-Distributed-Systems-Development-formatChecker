@@ -26,7 +26,7 @@ subscriber.eventListener.on("mqttRecieved", function(topic, payload) {
             publisher.publish(payload)
         }
 
-    } else { // date format checker 
+    } else if (payload.length > 15) { // date format checker 
 
         var messageExtracted = logic.extractData(payload)
         console.log(messageExtracted)
@@ -35,6 +35,9 @@ subscriber.eventListener.on("mqttRecieved", function(topic, payload) {
         if (dataResult) {
             publisher.publish(payload)
         }
+
+    } else {
+        publisher.publish(payload) // carry the circuit breaker
 
     }
 })
